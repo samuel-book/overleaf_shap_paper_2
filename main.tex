@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[twocolumn]{article}
 
 \usepackage{url} % Tidy web links
 \usepackage{microtype} % 'Improved' typesetting
@@ -18,7 +18,9 @@
 \usepackage{subcaption} % Allows use of subfigures
 \DeclareUnicodeCharacter{2060}{\nolinebreak} % Prevent unicode (U+2060) error on local complile
 \usepackage{cclicenses} % For creative commons license
-\usepackage{verbatim} % Used for word count
+\usepackage{verbatim} % Show text as is
+\usepackage{multicol} % For mutliple columns
+\usepackage{lipsum} % For generating test text
 
 % Have different references in Appendix
 \usepackage{multibib}
@@ -50,18 +52,19 @@
 
 % Ignore title and abstract in word count
 %TC:ignore
-\include{sections/1_title}
+\input{sections/1_title} % Use input instead of include to avoid page break at end
 \maketitle
 
-\include{sections/2_abstract}
+\input{sections/2_abstract}
 %TC:endignore
 
-%\tableofcontents
-\newpage
-%\input{sections/3_introduction}  % Use input instead of include to avoid page break at end
-%\input{sections/4_methods}
-%\input{sections/5_results}
-%\input{sections/6_discussion}
+
+
+%\newpage
+\input{sections/3_introduction}  
+\input{sections/4_methods}
+\input{sections/5_results}
+\input{sections/6_discussion}
 
 %\section{References}
 %\bibliographystyle{naturemag}
